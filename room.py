@@ -25,7 +25,7 @@ class RoomBooking:
       lbl_title.place(x=0,y=0,width=1100,height=50)
 
 
-      img2=Image.open(r"C:\Users\LENOVO\Desktop\pictures\images.png")
+      img2=Image.open(r"C:\Users\LENOVO\Desktop\pictures\images6.png")
       img2=img2.resize((100,40),Image.ANTIALIAS)
       self.photoimg2=ImageTk.PhotoImage(img2)
       
@@ -59,14 +59,9 @@ class RoomBooking:
       txtCheck_out_date.grid(row=2,column=1)
 
       
-
-
-
-
-
       label_room_type=Label(labelframeleft,text="Room type",font=("timee new roman",12,"bold"),padx=2,pady=6)
       label_room_type.grid(row=5,column=0,sticky=W)
-      combo_room_type=ttk.Combobox(labelframeleft,font=("time new roman",12,"bold"),width=27,state="readonly")   
+      combo_room_type=ttk.Combobox(labelframeleft,textvariable=self.var_roomtype,font=("time new roman",12,"bold"),width=27,state="readonly")   
   
       combo_room_type["value"]=("Single","Double","Laxary")
       combo_room_type.current(0)
@@ -93,7 +88,7 @@ class RoomBooking:
 
       
       
-      btn_frame=Frame(labelframeleft,bd=2,relief=RIDGE)
+      btn_frame=Frame(labelframeleft,bd=2,relief=RIDGE)  
       btn_frame.place(x=0,y=300,width=412,height=40)
 
       btnAdd=Button(btn_frame,text="Add",command=self.add_data,font=("time new roman",11,"bold"),bg="black",fg="gold",width=10)
@@ -108,7 +103,7 @@ class RoomBooking:
       btnReset=Button(btn_frame,text="Reset",font=("timee new roman",11,"bold"),bg="black",fg="gold",width=10)
       btnReset.grid(row=0,column=3,padx=1)
       
-      img2=Image.open(r"C:\Users\LENOVO\Desktop\pictures\img4.jfif")
+      img2=Image.open(r"C:\Users\LENOVO\Desktop\pictures\images.png")
       img2=img2.resize((150,40),Image.ANTIALIAS)
       self.photoimg2=ImageTk.PhotoImage(img2)
       
@@ -122,10 +117,6 @@ class RoomBooking:
       lblimg=Label(self.root,image=self.photoimg3,bd=0,relief=RIDGE)
       lblimg.place(x=760,y=55,width=520,height=200)
 
-
-
-
-    
       Table_Frame=LabelFrame(self.root,bd=2,relief=RIDGE,text="View Detail And Search System",font=("timee new roman",12,"bold"),padx=2)
       Table_Frame.place(x=435,y=200,width=860,height=260)
       
@@ -139,7 +130,7 @@ class RoomBooking:
       combo_Search.grid(row=0,column=1,padx=2)
       
       self.txt_search=StringVar()
-      txt_Search=ttk.Entry(Table_Frame,font=("timee new roman",13,"bold"),width=24)
+      txt_Search=ttk.Entry(Table_Frame,textvariable=self.txt_search,font=("timee new roman",13,"bold"),width=24)
       txt_Search.grid(row=0,column=2,padx=2)
 
 
